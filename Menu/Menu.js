@@ -31,3 +31,99 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned markup to the DOM.
 */
+
+// Tim
+// function menuMaker(arr){
+//   const menu = document.createElement("div")
+//   const ulList=  document.createElement("ul")
+
+//   const button = document.querySelector(".menu-button")
+
+//   // button.appendChild(menu)
+//   menu.appendChild(ulList)
+//   // ulList.appendChild(menuItem)
+
+//   menu.classList.add("menu")
+//   arr.forEach((arritem) => {
+//     const menuItem = document.createElement('li')
+//     menuItem.textContent = arritem
+//     ulList.appendChild(menuItem)
+//   })
+
+//   button.addEventListener("click", (e) => {
+//     menu.classList.toggle("menu--open")
+//   })
+
+//   return menu
+// }
+
+// const header = document.querySelector(".header")
+// header.appendChild(menuMaker(menuItems))
+
+
+
+
+// Damaris
+// const menuButton = document.querySelector('.menu-button');
+// const header = document.querySelector('.header')
+// function menuMaker(arr) {
+//   const menu = document.createElement('div');
+//   const menuList = document.createElement('ul');
+//   arr.forEach(element => {
+//     const menuListItems = document.createElement('li');
+//     menuListItems.textContent = element;
+//     menuList.classList.add('hover');
+//     menuList.appendChild(menuListItems);
+//   });
+//   menu.classList.add('menu');
+//   menu.appendChild(menuList)
+//   menuButton.addEventListener('click', (e) => {
+//     menu.classList.toggle('menu--open');
+//   });
+//   return menu;
+// }
+
+// header.appendChild(menuMaker(menuItems))
+
+
+// Kevin
+function menuMaker(items){
+  const menuDiv = document.createElement('div');
+  const ulList = document.createElement('ul')
+  const li0 = document.createElement('li');
+  const li1 = document.createElement('li');
+  const li2 = document.createElement('li');
+  const li3 = document.createElement('li');
+  const li4 = document.createElement('li');
+  const li5 = document.createElement('li');
+  // items.forEach((i) => {
+  //   const li0 = document.createElement('li');
+  //   li0.textContent = i;
+  //   ulList.appendChild(li0)
+  //   // menuButton.appendChild(menuMaker(i.items));
+  //   console.log(i);
+  // });
+
+  menuDiv.classList.add("menu")
+  menuDiv.appendChild(ulList);
+  // ulList.appendChild(li0);
+  // ulList.appendChild(li1);
+  // ulList.appendChild(li2);
+  // ulList.appendChild(li3);
+  // ulList.appendChild(li4);
+  // ulList.appendChild(li5);
+  const menuButton = document.querySelector('.menu-button');
+  console.log(menuButton);
+  menuButton.addEventListener('click', (e) => {
+    menuDiv.classList.toggle('menu--open');
+    menuButton.classList.toggle('toggle-on');
+  });
+  console.log(menuDiv);
+  return menuDiv;
+}
+  menuMaker(menuItems);
+const header = document.querySelector('.header');
+header.appendChild(menuMaker(menuItems));
+
+
+
